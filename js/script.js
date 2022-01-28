@@ -27,10 +27,10 @@ const root = new Vue({
     data: {
         newTask: "",
         tasks: [
-            { text: 'comprare il pane', done: false },
+           /*  { text: 'comprare il pane', done: false },
             { text: 'studiare js', done: false },
             { text: 'comprare regalo compleanno', done: false },
-            { text: 'andare alla posta', done: false }
+            { text: 'andare alla posta', done: false } */
         ]
     },
 
