@@ -42,7 +42,18 @@ const root = new Vue({
 
         //*AGGIUNGO UN NUOVO ELEMENTO IN LISTA
         addItemList(){
-            this.tasks.push(this.newTask)
+            //se la stringa non è vuota 
+            if(this.newTask.trim() !== ''){
+                //crea il nuovo oggetto
+                const newObject = {   
+                    text: this.newTask,
+                    done: false,
+                };
+                //e aggiungo il nuovo elemento alla lista
+                this.tasks.push(newObject);
+                //svuoto la casella non appena l'elemento è aggiunto alla lista
+                this.newTask = '';
+            }
         }
 
 
