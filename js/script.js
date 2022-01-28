@@ -9,7 +9,7 @@ MILESTONE 3
 *cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, 
 *che quindi viene aggiunto alla lista dei todo esistenti.
 Bonus:
-1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
+*1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente 
 (se done era uguale a false, impostare true e viceversa)
 
@@ -54,6 +54,11 @@ const root = new Vue({
                 //svuoto la casella non appena l'elemento è aggiunto alla lista
                 this.newTask = '';
             }
+        },
+
+        //*CLICCANDO SUL TESTO TOLGO O AGGIUNGO IL BARRATO SUL TESTO
+        toggleItem(index){
+            this.tasks[index].done = !this.tasks[index].done;
         }
 
 
