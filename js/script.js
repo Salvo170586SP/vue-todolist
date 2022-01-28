@@ -25,7 +25,7 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
-
+        newTask: "",
         tasks: [
             { text: 'comprare il pane', done: false },
             { text: 'studiare js', done: false },
@@ -38,6 +38,13 @@ const root = new Vue({
         //*ELIMINO UN ELEMENTO SPECIFICO DALL'ARRAY
         deleteItem(index) {
             this.tasks.splice(index, 1)
+        },
+
+        //*AGGIUNGO UN NUOVO ELEMENTO IN LISTA
+        addItemList(){
+            this.tasks.push(this.newTask)
         }
+
+
     }
 })
