@@ -23,13 +23,13 @@
                     <button class="btn btn-outline-primary bg-danger text-light" type="button" id="button-addon1" @click="addItemList">Aggiungi</button>
                     <input type="text" class="form-control" placeholder="scrivi qui tuoi appunti" v-model="newTask" @keyup.enter="addItemList">
                 </div>
-                <ul class="list-group">
-                    <li v-for="(task, index) in tasks" class="list-group-item d-flex justify-content-between">
+                <ul class="list-group" v-if="tasks.length">
+                    <li v-for="(task, index) in tasks"  class="list-group-item d-flex justify-content-between">
                         <span @click="toggleItem(index)" :class="{barred: task.done }">{{task.text}}</span>
                         <button type="button" class="btn-close" @click="deleteItem(index)"></button>
                     </li>
                 </ul>
-                <h2 class="text-center my-5">AGGIUNGI LA TUA LISTA DI APPUNTI</h2>
+                <h2 class="text-center my-5" v-else>AGGIUNGI LA TUA LISTA DI APPUNTI</h2>
             </main>
         </div>
     </div>
